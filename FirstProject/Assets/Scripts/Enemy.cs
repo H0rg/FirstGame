@@ -6,31 +6,39 @@ using UnityEngine.Video;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private Transform _target;
     private AudioSource audioSource;
     private NavMeshAgent navMeshAgent;
-    private int _hp = 2;
-    private int _time = 3;
+    private float _maxHp = 10;
+    private float _currentHp;
+    [SerializeField] private Transform _graveStonePosition;
+    [SerializeField] private GameObject _prepGraveStone;
 
-    public int Hp { get { return _hp; } }
     void Awake()
     {
+
+        _currentHp = _maxHp;
         audioSource = GetComponent<AudioSource>();
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
-    public void TakeDamage()
+    private void Update()
     {
-        _hp--;
-        if (_hp <= 0)
+        navMeshAgent.SetDestination(_target.position );
+        
+    }
+    public void TakeDamage(float damage)
+    {
+        _currentHp -= damage;
+        if (_currentHp <= 0)
         {
             Die();
         }
-        Debug.Log($"I got shot. HP = {Hp} ");
+        Debug.Log($"I got shot. HP = {_currentHp} ");
 
     }
     public void Die()
     {
-
+        Instantiate(_prepGraveStone, _graveStonePosition.position, transform.rotation);
         Destroy(gameObject);
-
     }
 }

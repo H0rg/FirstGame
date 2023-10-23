@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _speed = 4;
+    private float damage = 3;
 
     void Update()
     {
@@ -12,13 +13,15 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Pey");
         if (other.CompareTag("Enemy"))
         {
             Debug.Log("Hit you)");
-            other.GetComponent<Enemy>().TakeDamage();
+            other.GetComponent<Enemy>().TakeDamage(damage);
         }
-        Destroy(gameObject);
+
+        if(other.name != "Bomb(Clone)")
+            Destroy(gameObject);
+
     }
 
 }

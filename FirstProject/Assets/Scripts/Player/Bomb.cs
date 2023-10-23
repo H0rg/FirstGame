@@ -4,23 +4,45 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    private float _time;
-    void Start()
-    {
-        var enemyGO = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach(var enemy in enemyGO)
-        {
-            enemy.GetComponent<Enemy>().TakeDamage();
-        }
-    }
-
-    void Update()
-    {
-        
-    }
+    
+    private List<Enemy> _enemys = new List<Enemy>();
+    private float _explosionTime = 100;
+    private float _damage = 8;
     public void Init(float time)
     {
-        _time = time;
-        Destroy(gameObject,_time);
+        _explosionTime = time;
+        
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+           // _enemys.Add(other.GetComponent<Enemy>());
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            //_enemys.Remove(other.GetComponent<Enemy>());
+        }
+    }
+    private void Update()
+    {
+        _explosionTime -= Time.deltaTime;
+        if(_explosionTime <= 0)
+        {
+            Explosion();
+        }
+    }
+    private void Explosion()
+    {
+        foreach (Enemy enemy in _enemys)
+        {
+            enemy.TakeDamage(_damage);
+        }
+        Destroy(gameObject);
+    }
+     
+    
 }

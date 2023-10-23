@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerMy : MonoBehaviour
 {
     public float _speed = 5f;
-    public float _explosionTime = 3f;
+    public float _explosionTime = 5f;
     private float _maxHp = 10;
     private float _currentHp;
 
