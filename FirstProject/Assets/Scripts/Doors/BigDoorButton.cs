@@ -6,11 +6,11 @@ public class BigDoorButton : MonoBehaviour
 {
     [SerializeField] private bool KeyOne = false;
     [SerializeField] private bool KeyTwo = false;
-    [SerializeField] private GameObject BigDoor;
+    [SerializeField] private GameObject bigDoor;
     private BigDoor bigDoorScript;
     void Awake()
     {
-        bigDoorScript = BigDoor.GetComponent<BigDoor>();
+        bigDoorScript = bigDoor.GetComponent<BigDoor>();
     }
 
     void Update()
