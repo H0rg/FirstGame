@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -22,7 +23,6 @@ public class PlayerMy : MonoBehaviour
     public float force = 50;
 
     private Vector3 _direction;
-    private Transform _enemyPosition;
     private Vector3 _rotation;
     [SerializeField] private float _mouseSpeed = 250f;
 
@@ -33,44 +33,33 @@ public class PlayerMy : MonoBehaviour
 
     private bool _isReloaded = true;
     private bool _isGrounded = true;
-
+    [SerializeField] private List<Transform> boxes;
+    private List<Vector3> boxesSave = new List<Vector3>();
 
     private void Start()
     {
+        foreach(var box in boxes)
+        {
+            boxesSave.Add(box.position);
+        }
         rigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-            CreateBoom();
-
-        if (Input.GetButtonDown("Fire1") && _isReloaded == true)
-        {
-            CreateBullet();
-        }
+        if (Input.GetKeyDown(KeyCode.F)) CreateBoom();
+        if (Input.GetButtonDown("Fire1") && _isReloaded == true) Fire();
+        if (Input.GetKeyDown(KeyCode.Space)) Jump();
+        if (Input.GetKeyDown(KeyCode.Y)) RestartBoxes();
         Move();
         cameraMove();
-        Debug.Log($"{_isGrounded}");
-        RaycastHit hit;
-        var rayCast = Physics.Raycast(_isGroundedPosition.position, Vector3.down, out hit, 0.2f);
-        if(rayCast)
-            Debug.Log(hit.collider.gameObject.name);
-        if (rayCast) _isGrounded = true;
-        else _isGrounded = false;
-
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded == true)
-        {
-            Jump();
-        }
-        
     }
     private void Reload()
     {
         _isReloaded = true;
     }
 
-    private void CreateBullet()
+    private void Fire()
     {
         //var bullet = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation).GetComponent<Rigidbody>();
         //bullet.AddForce(Vector3.forward * force);
@@ -92,8 +81,7 @@ public class PlayerMy : MonoBehaviour
     }
     private void CreateBoom()
     {
-        Instantiate(_bombPref, _bombStartPosition.position, transform.rotation)
-                                .GetComponent<Bomb>().Init(_explosionTime);
+        Instantiate(_bombPref, _bombStartPosition.position, transform.rotation);
     }
     public void Move()
     {
@@ -125,7 +113,26 @@ public class PlayerMy : MonoBehaviour
     public void Jump()
     {
         Debug.Log("JUMP");
-        rigidbody.AddForce(transform.up * 10);
 
+        RaycastHit hit;
+
+        var rayCast = Physics.Raycast(_isGroundedPosition.position, Vector3.down, out hit, 0.2f);
+
+        if (rayCast) _isGrounded = true;
+        else _isGrounded = false;
+        
+        if (_isGrounded == true) rigidbody.AddForce(transform.up * 300, ForceMode.Impulse);
+    }
+
+    public void RestartBoxes()
+    {
+        Debug.Log("Restart Boxes");
+        int index = 0;
+        foreach(var box in boxes)
+        {
+            Debug.Log($"Box{box.name} current position {box.transform.position} to {boxesSave[index]} position");
+            box.transform.position = boxesSave[index];
+            index++;
+        }
     }
 }

@@ -1,48 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    
-    private List<Enemy> _enemys = new List<Enemy>();
-    private float _explosionTime = 100;
-    private float _damage = 8;
-    public void Init(float time)
+
+    private float _explosionTime = 3f;
+    private float _explosionDamage = 10f;
+    private float _explosionPower = 15f;
+
+
+    private void Start()
     {
-        _explosionTime = time;
-        
+        Invoke("Explosion", _explosionTime);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-           // _enemys.Add(other.GetComponent<Enemy>());
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            //_enemys.Remove(other.GetComponent<Enemy>());
-        }
-    }
-    private void Update()
-    {
-        _explosionTime -= Time.deltaTime;
-        if(_explosionTime <= 0)
-        {
-            Explosion();
-        }
-    }
+
     private void Explosion()
     {
-        foreach (Enemy enemy in _enemys)
+        var collisions = Physics.OverlapSphere(transform.position, 5);
+        foreach (var collision in collisions)
         {
-            enemy.TakeDamage(_damage);
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                collision.gameObject.GetComponent<Enemy>().TakeDamage(_explosionDamage);
+            }
+            if (collision.gameObject.GetComponent<Rigidbody>() != null)
+            {
+                Debug.Log("pshhhh");
+                var tf = collision.gameObject.GetComponent<Transform>();
+                var rb = collision.gameObject.GetComponent<Rigidbody>();
+
+                var newDir = Vector3.RotateTowards(transform.forward, tf.position - transform.position,0,0f);
+
+                rb.AddForce(newDir * _explosionPower, ForceMode.Impulse);
+            }
+
         }
+        Debug.Log("BOOM");
         Destroy(gameObject);
     }
-     
-    
 }
