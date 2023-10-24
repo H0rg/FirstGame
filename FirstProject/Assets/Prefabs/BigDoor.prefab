@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 764508706621779187}
   - component: {fileID: 7037292149820174466}
   m_Layer: 0
-  m_Name: Wall (15)
+  m_Name: FirstDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 719328054169349808}
   - component: {fileID: 2629385375713219342}
   m_Layer: 0
-  m_Name: Wall (16)
+  m_Name: SecondDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 4071243811439018149}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 0.7, y: 2, z: 0.7}
+  m_LocalPosition: {x: 0.70000005, y: 2, z: 0.70000005}
   m_LocalScale: {x: 0.05, y: 4, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []

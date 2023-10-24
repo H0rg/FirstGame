@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &264089316579526582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3975320560885022484}
+  m_Layer: 0
+  m_Name: isGroundedPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3975320560885022484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264089316579526582}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.119, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1706641708608577667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1095610736804871113
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,9 +138,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338711653864752198}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2729999, y: 2.028, z: 1.0780001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.288, y: 2.021, z: 1.082}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1706641708608577667}
@@ -217,6 +248,7 @@ Transform:
   - {fileID: 8237089417894962734}
   - {fileID: 6961798934260087663}
   - {fileID: 7327181959205733748}
+  - {fileID: 3975320560885022484}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &8873157371503736524
@@ -260,7 +292,11 @@ MonoBehaviour:
   _bombStartPosition: {fileID: 6961798934260087663}
   _bulletPref: {fileID: 8369069748119107124, guid: 0e5c6280619608d46b73cbbbfd39fb92, type: 3}
   _bulletStartPosition: {fileID: 7327181959205733748}
+  _isGroundedPosition: {fileID: 3975320560885022484}
+  force: 300
   _mouseSpeed: 2
+  keyOne: 0
+  keyTwo: 0
 --- !u!54 &3771427915725662633
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,8 +1,10 @@
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerMy : MonoBehaviour
 {
+    private Rigidbody rigidbody;
+
     public float _speed = 5f;
     public float _explosionTime = 5f;
     private float _maxHp = 10;
@@ -13,6 +15,11 @@ public class PlayerMy : MonoBehaviour
 
     public GameObject _bulletPref;
     public Transform _bulletStartPosition;
+    private float _bulletDamage = 5;
+
+    public Transform _isGroundedPosition; 
+
+    public float force = 50;
 
     private Vector3 _direction;
     private Transform _enemyPosition;
@@ -22,45 +29,71 @@ public class PlayerMy : MonoBehaviour
     [SerializeField] public bool keyOne = false;
     [SerializeField] public bool keyTwo = false;
 
-    public const float _maxReloadTime = 0.2f;
-    private float _currentReloadTime = 0;
-    private float _currentTimeFromLastShot = 0;
+    public const float _maxReloadTime = 0.5f;
+
+    private bool _isReloaded = true;
+    private bool _isGrounded = true;
 
 
-    private void Awake()
-    {
-        _enemyPosition = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
-    }
     private void Start()
     {
+        rigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
             CreateBoom();
-        
-        _currentReloadTime += Time.deltaTime;
-        if (Input.GetButtonDown("Fire1") && _currentReloadTime >= _currentTimeFromLastShot)
+
+        if (Input.GetButtonDown("Fire1") && _isReloaded == true)
         {
             CreateBullet();
-            _currentTimeFromLastShot = _currentReloadTime + _maxReloadTime;
-            Debug.Log($"_currentTimeFromLastShot [{_currentTimeFromLastShot}]   - _currentReloadTime[{_currentReloadTime}]");
         }
         Move();
         cameraMove();
+        Debug.Log($"{_isGrounded}");
+        RaycastHit hit;
+        var rayCast = Physics.Raycast(_isGroundedPosition.position, Vector3.down, out hit, 0.2f);
+        if(rayCast)
+            Debug.Log(hit.collider.gameObject.name);
+        if (rayCast) _isGrounded = true;
+        else _isGrounded = false;
 
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded == true)
+        {
+            Jump();
+        }
+        
+    }
+    private void Reload()
+    {
+        _isReloaded = true;
     }
 
     private void CreateBullet()
     {
-        GameObject bullet = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation);
+        //var bullet = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation).GetComponent<Rigidbody>();
+        //bullet.AddForce(Vector3.forward * force);
+        //bullet.AddTorque(Vector3.left * 80);
+        RaycastHit hit;
+        var rayCast = Physics.Raycast(_bulletStartPosition.position, transform.forward, out hit, 100);
+        if (rayCast)
+        {
+            Debug.Log($"{hit.collider.gameObject.name} <<");
+            if (hit.collider.gameObject.CompareTag("Enemy"))
+            {
+                hit.collider.gameObject.GetComponent<Enemy>().TakeDamage(_bulletDamage);
+            }
+        }
+
+
+        _isReloaded = false;
+        Invoke("Reload", _maxReloadTime);
     }
     private void CreateBoom()
     {
         Instantiate(_bombPref, _bombStartPosition.position, transform.rotation)
                                 .GetComponent<Bomb>().Init(_explosionTime);
-        
     }
     public void Move()
     {
@@ -76,7 +109,7 @@ public class PlayerMy : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        if(_currentHp <= 0)
+        if (_currentHp <= 0)
         {
             Debug.Log("YOU ARE DEAD");
         }
@@ -84,9 +117,15 @@ public class PlayerMy : MonoBehaviour
     }
     public void Heal(float heal)
     {
-        if(_currentHp + heal > _maxHp)
+        if (_currentHp + heal > _maxHp)
             _currentHp = _maxHp;
-        else 
+        else
             _currentHp += heal;
+    }
+    public void Jump()
+    {
+        Debug.Log("JUMP");
+        rigidbody.AddForce(transform.up * 10);
+
     }
 }

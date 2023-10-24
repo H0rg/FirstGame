@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _speed = 4;
-    private float damage = 3;
+    private float damage = 5;
 
     void Update()
     {
@@ -15,7 +15,6 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Hit you)");
             other.GetComponent<Enemy>().TakeDamage(damage);
         }
 

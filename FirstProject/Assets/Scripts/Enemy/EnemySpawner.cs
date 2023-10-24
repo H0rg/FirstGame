@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,27 +7,31 @@ public class EnemySpawner : MonoBehaviour
     public List<GameObject> SpawnPoint;
     public Enemy _prefEnemy;
     public int _enemyCounter = 0;
-   
-    void Start()
+
+    private float _spawnTime = 2;
+    private float _nextSpawnTime = 5;
+
+    private int _maxEnemy = 3;
+    private int _currentEnemy = 0;
+
+
+    void Awake()
     {
-        foreach(var spawn in SpawnPoint)
-        {
-            Instantiate(_prefEnemy, spawn.transform.position, Quaternion.identity);
-        }
+        Invoke("SpawnEnemy", _spawnTime);
+        //InvokeRepeating("SpawnEnemy", _spawnTime, _nextSpawnTime);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        //Spawn();
     }
-    public void Spawn()
+    public void SpawnEnemy()
     {
-        int random = Random.Range(0, SpawnPoint.Count) ;
-        if(_enemyCounter < 5)
-        {
-            Instantiate(_prefEnemy, SpawnPoint[random].transform.position, Quaternion.identity);
-        }
-        _enemyCounter = GameObject.FindGameObjectsWithTag("Enemy").Count();
-        Debug.Log($"{_enemyCounter} enemys around as");
+        Instantiate(_prefEnemy, SpawnPoint[0].transform.position, Quaternion.identity);
+        _currentEnemy++;
+        //if(_currentEnemy >= _maxEnemy)
+        //{
+        //    CancelInvoke();
+        //    print("Invoke have been canceled");
+        //}
     }
 }
