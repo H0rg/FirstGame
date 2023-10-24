@@ -198,22 +198,6 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[1]
       value: 
       objectReference: {fileID: 2066763863}
-    - target: {fileID: 1532063055759006338, guid: afcfd2d2b0075774ea4ceb33a50ee9fe, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1532063055759006338, guid: afcfd2d2b0075774ea4ceb33a50ee9fe, type: 3}
-      propertyPath: m_BaseOffset
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1532063055759006338, guid: afcfd2d2b0075774ea4ceb33a50ee9fe, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1972223765384413366, guid: afcfd2d2b0075774ea4ceb33a50ee9fe, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4032537622933716448, guid: afcfd2d2b0075774ea4ceb33a50ee9fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -257,10 +241,6 @@ PrefabInstance:
     - target: {fileID: 6949703363623479260, guid: afcfd2d2b0075774ea4ceb33a50ee9fe, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7854823065950280738, guid: afcfd2d2b0075774ea4ceb33a50ee9fe, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11165,7 +11145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4349668913254021280, guid: e925e87eb020f8749bab3409d978db7e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6961798934260087663, guid: e925e87eb020f8749bab3409d978db7e, type: 3}
       propertyPath: m_LocalPosition.y

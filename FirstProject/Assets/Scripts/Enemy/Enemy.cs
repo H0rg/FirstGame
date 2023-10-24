@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Net.Http.Headers;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -33,7 +32,7 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-         moveToWayPoints();
+        moveToWayPoints();
     }
     public void TakeDamage(float damage)
     {
@@ -52,10 +51,11 @@ public class Enemy : MonoBehaviour
     }
     public void moveToWayPoints()
     {
-        if(navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+        if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
-            _currentWayPointIndex = (_currentWayPointIndex + 1 ) % wayPoints.Count;
+            _currentWayPointIndex = (_currentWayPointIndex + 1) % wayPoints.Count;
             navMeshAgent.SetDestination(wayPoints[_currentWayPointIndex].position);
-        }    }
+        }
+    }
 
 }

@@ -22,6 +22,10 @@ public class PlayerMy : MonoBehaviour
     [SerializeField] public bool keyOne = false;
     [SerializeField] public bool keyTwo = false;
 
+    public const float _maxReloadTime = 0.2f;
+    private float _currentReloadTime = 0;
+    private float _currentTimeFromLastShot = 0;
+
 
     private void Awake()
     {
@@ -35,12 +39,17 @@ public class PlayerMy : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
             CreateBoom();
-        if (Input.GetButtonDown("Fire1"))
+        
+        _currentReloadTime += Time.deltaTime;
+        if (Input.GetButtonDown("Fire1") && _currentReloadTime >= _currentTimeFromLastShot)
         {
             CreateBullet();
+            _currentTimeFromLastShot = _currentReloadTime + _maxReloadTime;
+            Debug.Log($"_currentTimeFromLastShot [{_currentTimeFromLastShot}]   - _currentReloadTime[{_currentReloadTime}]");
         }
         Move();
         cameraMove();
+
     }
 
     private void CreateBullet()
@@ -51,6 +60,7 @@ public class PlayerMy : MonoBehaviour
     {
         Instantiate(_bombPref, _bombStartPosition.position, transform.rotation)
                                 .GetComponent<Bomb>().Init(_explosionTime);
+        
     }
     public void Move()
     {
