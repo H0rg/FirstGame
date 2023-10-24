@@ -1,30 +1,39 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Video;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
+
     private AudioSource audioSource;
     private NavMeshAgent navMeshAgent;
+
     private float _maxHp = 10;
     private float _currentHp;
+
     [SerializeField] private Transform _graveStonePosition;
     [SerializeField] private GameObject _prepGraveStone;
 
+    private float _time = 0;
+    private float _interval = 3f;
+
+    [SerializeField] private List<Transform> wayPoints;
+    private int _currentWayPointIndex;
+
     void Awake()
     {
-
         _currentHp = _maxHp;
         audioSource = GetComponent<AudioSource>();
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
+    private void Start()
+    {
+        navMeshAgent.SetDestination(wayPoints[0].position);
+    }
     private void Update()
     {
-        navMeshAgent.SetDestination(_target.position );
-        
+         moveToWayPoints();
     }
     public void TakeDamage(float damage)
     {
@@ -41,4 +50,12 @@ public class Enemy : MonoBehaviour
         Instantiate(_prepGraveStone, _graveStonePosition.position, transform.rotation);
         Destroy(gameObject);
     }
+    public void moveToWayPoints()
+    {
+        if(navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+        {
+            _currentWayPointIndex = (_currentWayPointIndex + 1 ) % wayPoints.Count;
+            navMeshAgent.SetDestination(wayPoints[_currentWayPointIndex].position);
+        }    }
+
 }
