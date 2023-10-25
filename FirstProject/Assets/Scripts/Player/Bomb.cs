@@ -5,12 +5,16 @@ public class Bomb : MonoBehaviour
 
     private float _explosionTime = 3f;
     private float _explosionDamage = 10f;
-    private float _explosionPower = 15f;
+    private float _explosionPower = 50f;
 
 
     private void Start()
     {
         Invoke("Explosion", _explosionTime);
+
+    }
+    private void Update()
+    {
     }
 
     private void Explosion()
@@ -28,7 +32,7 @@ public class Bomb : MonoBehaviour
                 var tf = collision.gameObject.GetComponent<Transform>();
                 var rb = collision.gameObject.GetComponent<Rigidbody>();
 
-                var newDir = Vector3.RotateTowards(transform.forward, tf.position - transform.position,0,0f);
+                var newDir = Vector3.RotateTowards(transform.forward, tf.position - transform.position,2,2f);
 
                 rb.AddForce(newDir * _explosionPower, ForceMode.Impulse);
             }

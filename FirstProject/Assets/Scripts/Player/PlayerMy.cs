@@ -13,14 +13,20 @@ public class PlayerMy : MonoBehaviour
 
     public GameObject _bombPref;
     public Transform _bombStartPosition;
+    private float _throwForce = 1.2f;
+
 
     public GameObject _bulletPref;
     public Transform _bulletStartPosition;
     private float _bulletDamage = 5;
 
+    public GameObject _minePref;
+    public Transform _mineStartPosition;
+
     public Transform _isGroundedPosition; 
 
     public float force = 50;
+    private float _jumpForce = 450;
 
     private Vector3 _direction;
     private Vector3 _rotation;
@@ -33,15 +39,16 @@ public class PlayerMy : MonoBehaviour
 
     private bool _isReloaded = true;
     private bool _isGrounded = true;
-    [SerializeField] private List<Transform> boxes;
-    private List<Vector3> boxesSave = new List<Vector3>();
+
+    [SerializeField] private GameObject boxes;
+    private List<Vector3> boxesPositionSave = new List<Vector3>();
+    private List<Quaternion> boxesRotationSave = new List<Quaternion>();
+
+    private bool _handFlag = false;
 
     private void Start()
     {
-        foreach(var box in boxes)
-        {
-            boxesSave.Add(box.position);
-        }
+        BoxesSave();
         rigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -51,6 +58,8 @@ public class PlayerMy : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && _isReloaded == true) Fire();
         if (Input.GetKeyDown(KeyCode.Space)) Jump();
         if (Input.GetKeyDown(KeyCode.Y)) RestartBoxes();
+        if (Input.GetKeyDown(KeyCode.G)) CreateMine();
+        if (Input.GetKeyDown(KeyCode.Z)) HandUp();
         Move();
         cameraMove();
     }
@@ -81,8 +90,14 @@ public class PlayerMy : MonoBehaviour
     }
     private void CreateBoom()
     {
-        Instantiate(_bombPref, _bombStartPosition.position, transform.rotation);
+        var bomb = Instantiate(_bombPref, _bombStartPosition.position, Quaternion.identity).GetComponent<Rigidbody>();
+        bomb.AddForce(_bombStartPosition.forward * _throwForce, ForceMode.Impulse);
     }
+    private void CreateMine()
+    {
+        var bomb = Instantiate(_minePref, _mineStartPosition.position, Quaternion.identity);
+    }
+
     public void Move()
     {
         _direction.x = Input.GetAxis("Horizontal");
@@ -121,18 +136,49 @@ public class PlayerMy : MonoBehaviour
         if (rayCast) _isGrounded = true;
         else _isGrounded = false;
         
-        if (_isGrounded == true) rigidbody.AddForce(transform.up * 300, ForceMode.Impulse);
+        if (_isGrounded == true) rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
     }
 
     public void RestartBoxes()
     {
-        Debug.Log("Restart Boxes");
         int index = 0;
-        foreach(var box in boxes)
+        int childNumber = boxes.transform.childCount;
+        for (int i = 0; i < childNumber; i++)
         {
-            Debug.Log($"Box{box.name} current position {box.transform.position} to {boxesSave[index]} position");
-            box.transform.position = boxesSave[index];
+            var box = boxes.transform.GetChild(i).gameObject.GetComponent<Transform>();
+            box.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            box.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            box.transform.position = boxesPositionSave[index];
+            box.rotation = boxesRotationSave[index];
             index++;
         }
+    }
+
+    public void BoxesSave()
+    {
+        int childNumber = boxes.transform.childCount;
+        for(int i = 0; i < childNumber; i++)
+        {
+            var box = boxes.transform.GetChild(i).gameObject.GetComponent<Transform>();
+            boxesPositionSave.Add(box.position);
+            boxesRotationSave.Add(box.rotation);
+        }
+    }
+
+    public void HandUp()
+    {
+        if (_handFlag == false)
+        {
+            transform.Find("ShoulderRight").Rotate(-35, 0, 0);
+            transform.Find("HandBand").gameObject.SetActive(true);
+            _handFlag = true;
+        }
+        else
+        {
+            transform.Find("ShoulderRight").Rotate(35, 0, 0);
+            transform.Find("HandBand").gameObject.SetActive(false);
+            _handFlag = false;
+        }
+
     }
 }
