@@ -293,7 +293,6 @@ GameObject:
   - component: {fileID: 1532063055759006338}
   - component: {fileID: 7854823065950280738}
   - component: {fileID: -6968237055151313057}
-  - component: {fileID: 482151672446394377}
   - component: {fileID: 9055593606963455681}
   m_Layer: 0
   m_Name: Enemy
@@ -412,29 +411,6 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 0}
   - {fileID: 0}
---- !u!136 &482151672446394377
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949703363623479260}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4
-  m_Height: 10
-  m_Direction: 2
-  m_Center: {x: 0, y: 1, z: 5}
 --- !u!114 &9055593606963455681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,6 +426,9 @@ MonoBehaviour:
   _player: {fileID: 0}
   _speed: 2
   color: {r: 0, g: 1, b: 0, a: 1}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8568130567737438863
 GameObject:
   m_ObjectHideFlags: 0

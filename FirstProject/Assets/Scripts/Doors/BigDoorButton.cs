@@ -17,7 +17,10 @@ public class BigDoorButton : MonoBehaviour
     {
         if (KeyOne == true && KeyTwo == true)
         {
-            bigDoorScript.Open();
+            Debug.Log("Openning");
+            bigDoorScript.OperateDoor();
+            KeyOne = false;
+            KeyTwo = false;
         }
     }
 

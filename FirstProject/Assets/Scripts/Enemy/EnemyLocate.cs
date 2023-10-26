@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,10 +5,10 @@ public class EnemyLocate : MonoBehaviour
 {
     private bool _isSeePlayer = false;
     [SerializeField] private Transform _player;
-    [SerializeField] private float _speed =0.5f;
+    [SerializeField] private float _speed = 2f;
     [SerializeField] private Color color = Color.green;
+    [SerializeField] private LayerMask mask;
     private NavMeshAgent navMeshAgent;
-    public LayerMask mask;
 
     private void Awake()
     {
@@ -48,15 +45,20 @@ public class EnemyLocate : MonoBehaviour
             navMeshAgent.Stop();
 
             Vector3 dir = _player.position - transform.position + Vector3.up;
-            Vector3 rot = _player.position - transform.position;
 
-            var rayCast = Physics.Raycast(transform.position, dir, out hit,10, ~(1<<8));
+            Vector3 direction = (_player.position - transform.position).normalized; ;//Vector3.ClampMagnitude(_player.position - transform.position, 1);
+
+
+            var rayCast = Physics.Raycast(transform.position, dir, out hit, 10, mask);
             if (rayCast)
             {
                 if (hit.collider.transform == _player)
                 {
-                    transform.rotation = Quaternion.LookRotation(rot);
-                    transform.Translate((_player.position - transform.position) * _speed * Time.deltaTime);
+                    transform.LookAt(_player);
+
+                    transform.Translate(direction * _speed * Time.deltaTime);
+                    //Vector3.MoveTowards(transform.position, _player.position, _speed);
+
                     color = Color.red;
                 }
                 else { print(hit.collider.name); }

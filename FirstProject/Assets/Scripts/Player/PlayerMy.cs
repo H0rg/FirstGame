@@ -15,7 +15,6 @@ public class PlayerMy : MonoBehaviour
     public Transform _bombStartPosition;
     private float _throwForce = 1.2f;
 
-
     public GameObject _bulletPref;
     public Transform _bulletStartPosition;
     private float _bulletDamage = 5;
@@ -63,6 +62,7 @@ public class PlayerMy : MonoBehaviour
         Move();
         cameraMove();
     }
+    
     private void Reload()
     {
         _isReloaded = true;

@@ -6,6 +6,7 @@ public class Vectors : MonoBehaviour
 {
     [SerializeField] private Color color;
     [SerializeField] private float _speed = 5f;
+    [SerializeField] private Camera camera;
 
 
     private void Start()
@@ -16,10 +17,22 @@ public class Vectors : MonoBehaviour
     void Update()
     {
 
-        Vector3 dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        dir = Vector3.ClampMagnitude(dir, 1);
-        transform.Translate(Vector3.ClampMagnitude(dir, 1) * _speed * Time.deltaTime);
+        //Vector3 dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        //dir = Vector3.ClampMagnitude(dir, 1);
+        //transform.Translate(Vector3.ClampMagnitude(dir, 1) * _speed * Time.deltaTime);
 
+
+        Transform camTransform = camera.transform;
+        Vector3 camPosition = new Vector3(camTransform.position.x, transform.position.y, camTransform.position.z);
+
+        Vector3 direction = (transform.position - camPosition).normalized;
+
+        Vector3 forwardMovement = direction * Input.GetAxis("Vertical");
+        Vector3 horizontalMovement = camTransform.right * Input.GetAxis("Horizontal");
+
+        Vector3 movement = Vector3.ClampMagnitude(forwardMovement + horizontalMovement, 1);
+
+        transform.Translate(movement * _speed * Time.deltaTime, Space.World);
 
         //draw();
         //moveByTranslate();
