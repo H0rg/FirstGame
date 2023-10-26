@@ -57,6 +57,7 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator DeadAnimation()
     {
+        navMeshAgent.Stop();
         while (_enemyRender.material.color != _deathColor)
         {
             _enemyRender.material.color = Color.Lerp(_enemyRender.material.color, _deathColor, 0.03f);
@@ -76,5 +77,6 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
 
 }

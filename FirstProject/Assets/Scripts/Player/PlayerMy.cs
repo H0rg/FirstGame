@@ -172,6 +172,7 @@ public class PlayerMy : MonoBehaviour
             transform.Find("ShoulderRight").Rotate(-35, 0, 0);
             transform.Find("HandBand").gameObject.SetActive(true);
             _handFlag = true;
+            
         }
         else
         {

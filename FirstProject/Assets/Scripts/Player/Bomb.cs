@@ -5,7 +5,7 @@ public class Bomb : MonoBehaviour
 
     private float _explosionTime = 3f;
     private float _explosionDamage = 10f;
-    private float _explosionPower = 50f;
+    private float _explosionPower = 15f;
 
 
     private void Start()
