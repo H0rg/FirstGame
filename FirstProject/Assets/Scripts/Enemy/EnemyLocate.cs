@@ -8,6 +8,7 @@ public class EnemyLocate : MonoBehaviour
     [SerializeField] private float _speed = 2f;
     [SerializeField] private Color color = Color.green;
     [SerializeField] private LayerMask mask;
+    [SerializeField] private float maxDistance = 15f;
     private NavMeshAgent navMeshAgent;
 
     private void Awake()
@@ -44,21 +45,21 @@ public class EnemyLocate : MonoBehaviour
 
             navMeshAgent.Stop();
 
-            Vector3 dir = _player.position - transform.position + Vector3.up;
+            Vector3 dir = _player.position - transform.position;
 
-            Vector3 direction = (_player.position - transform.position).normalized; ;//Vector3.ClampMagnitude(_player.position - transform.position, 1);
+            Vector3 direction = Vector3.ClampMagnitude(_player.position - transform.position, 1);
 
 
-            var rayCast = Physics.Raycast(transform.position, dir, out hit, 10, mask);
+            var rayCast = Physics.Raycast(transform.position, dir, out hit, maxDistance, mask);
             if (rayCast)
             {
                 if (hit.collider.transform == _player)
                 {
+                    print(hit.collider.name);
                     transform.LookAt(_player);
-
-                    transform.Translate(direction * _speed * Time.deltaTime);
+                    transform.Translate(direction * _speed * Time.deltaTime );
                     //Vector3.MoveTowards(transform.position, _player.position, _speed);
-
+                    
                     color = Color.red;
                 }
                 else { print(hit.collider.name); }

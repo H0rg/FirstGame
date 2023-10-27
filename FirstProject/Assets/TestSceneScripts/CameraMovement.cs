@@ -37,7 +37,7 @@ public class CameraMovement : MonoBehaviour
         {
             speed = 30;
             smoothTime = 0.2f;
-}
+        }
         else
         {
             speed = 10;

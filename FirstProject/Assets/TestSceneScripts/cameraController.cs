@@ -5,24 +5,22 @@ using UnityEngine;
 
 public class cameraController : MonoBehaviour
 {
-    [SerializeField] private Transform target;
-     Vector3 dir;
-    [SerializeField] private float sensivity = 5f;
+    [SerializeField] private Transform target; 
+    Vector3 dir;
+    [SerializeField] private float sensivity = 1f;
     Vector3 _rotation;
     
     void Update()
     {
         //transform.LookAt(target);
-        //Move();
+        Move();
     }
 
     public void Move()
     {
-        _rotation.x = Input.GetAxis("Mouse X"); 
-        _rotation.z = Input.GetAxis("Mouse Y");
-
-        transform.eulerAngles = _rotation * sensivity;
-
+        _rotation.y = Input.GetAxis("Mouse X");
+        
+        transform.Rotate(_rotation * sensivity);
     }
 }
 

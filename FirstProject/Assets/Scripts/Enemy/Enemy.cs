@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
     {
         moveToWayPoints();
     }
+    
     public void TakeDamage(float damage)
     {
         _currentHp -= damage;
