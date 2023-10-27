@@ -9,7 +9,7 @@ public class CubeMovement : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private float speed;
-    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float rotationSpeed = 1;
     private Vector3 startPosition;
     private Vector3 directionTo;
     private Vector3 directionFrom;
@@ -26,8 +26,6 @@ public class CubeMovement : MonoBehaviour
     void Update()
     {
         movingToTarget();
-        Vector3 newDir = UnityEngine.Vector3.(transform.forward + directionTo) * rotationSpeed * Time.deltaTime;
-        transform.rotation = ;
         //Looking();
     }
 
@@ -52,9 +50,6 @@ public class CubeMovement : MonoBehaviour
     }
     public void Looking()
     {
-        var newDir = Vector3.RotateTowards(transform.forward, target.position - transform.position,
-            rotationSpeed * Time.deltaTime, 0f);
-        transform.rotation = Quaternion.LookRotation(newDir);
     }
     
 }
