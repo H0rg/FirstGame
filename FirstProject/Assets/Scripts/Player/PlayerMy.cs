@@ -9,7 +9,7 @@ public class PlayerMy : MonoBehaviour
     public float _speed = 5f;
     public float _explosionTime = 5f;
     private float _maxHp = 10;
-    private float _currentHp;
+    [SerializeField] public float _currentHp;
 
     public GameObject _bombPref;
     public Transform _bombStartPosition;
@@ -47,6 +47,7 @@ public class PlayerMy : MonoBehaviour
 
     private void Start()
     {
+        _currentHp = _maxHp;
         BoxesSave();
         rigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -111,11 +112,11 @@ public class PlayerMy : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
+        _currentHp -= damage;
         if (_currentHp <= 0)
         {
             Debug.Log("YOU ARE DEAD");
         }
-        _currentHp -= damage;
     }
     public void Heal(float heal)
     {

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class EnemyLocate : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class EnemyLocate : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private Transform _parent;
     private Vector3 _lastSeenPlayerPosition;
-
+    [SerializeField] private float _damage = 1f;
+    private bool _makeHit = false;
+    private float _timeBetweenHits = 3f;
+    public float elapsedTime = 0;
     private float duration = 2f;
 
     private void Awake()
@@ -25,6 +29,8 @@ public class EnemyLocate : MonoBehaviour
     private void Update()
     {
         moveToPlayer();
+        if(_makeHit)
+            HitsReload();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -67,10 +73,30 @@ public class EnemyLocate : MonoBehaviour
                             Vector3.MoveTowards(_parent.position, _player.position, _speed * Time.deltaTime);
                         _lastSeenPlayerPosition = _player.position;
                     }
+                    else if (_makeHit == false)
+                    {
+                        _player.gameObject.GetComponent<PlayerMy>().TakeDamage(_damage);
+                        _makeHit = true;
+                        Debug.Log($"Player HP = [{_player.gameObject.GetComponent<PlayerMy>()._currentHp}] ");
+                    }
                 }
             }
 
         }
+    }
+
+    public void HitsReload()
+    {
+        if (elapsedTime < _timeBetweenHits)
+        {
+            elapsedTime += Time.deltaTime;
+        }
+        else
+        {
+            elapsedTime = 0;
+            _makeHit = false;
+        }
+
     }
 
     public IEnumerator CheckLastSeenPosition()

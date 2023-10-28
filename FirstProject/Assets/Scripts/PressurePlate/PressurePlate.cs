@@ -8,9 +8,12 @@ using Vector3 = System.Numerics.Vector3;
 public class PressurePlate : MonoBehaviour
 {
     private Transform buttonPosition;
+    [SerializeField] private GameObject SecretDoor;
+    private SecretDoor scripsDoor;
 
     private void Start()
     {
+        scripsDoor = SecretDoor.GetComponent<SecretDoor>();
         buttonPosition = transform.Find("Button").GetComponent<Transform>();
     }
 
@@ -18,6 +21,7 @@ public class PressurePlate : MonoBehaviour
     {
         if (other.CompareTag("HeavyItem"))
         {
+            scripsDoor.OpenDoor();
             Debug.Log("MovingDown");
             buttonPosition.Translate(0, -0.09f, 0);
         }
@@ -27,6 +31,7 @@ public class PressurePlate : MonoBehaviour
     {
         if (other.CompareTag("HeavyItem"))
         {
+            scripsDoor.CloseDoor();
             Debug.Log("MovingUp");
             buttonPosition.Translate(0, 0.09f, 0);
         }

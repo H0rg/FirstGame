@@ -8,7 +8,6 @@ public class BigDoor : MonoBehaviour
     Vector3 closePosition;
     void Start()
     {
-        // Sets the first position of the door as it's closed position.
         closePosition = transform.position;
     }
     public void OperateDoor()

@@ -33,6 +33,11 @@ public class CameraRig : MonoBehaviour
 
             transform.localRotation = Quaternion.AngleAxis(m_InputMouseX, Vector3.up);
             transform.localRotation *= Quaternion.AngleAxis(m_InputMouseY, Vector3.left);
+        }else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
+    
 }
