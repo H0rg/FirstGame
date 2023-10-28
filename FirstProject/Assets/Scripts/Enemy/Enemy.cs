@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     {
         if (wayPoints.Count > 0 && wayPoints[0] != null)
         {
-            navMeshAgent.SetDestination(wayPoints[0].position);
+        navMeshAgent.SetDestination(wayPoints[0].position);
         }
     }
     private void Update()
@@ -78,6 +78,4 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-
-
 }

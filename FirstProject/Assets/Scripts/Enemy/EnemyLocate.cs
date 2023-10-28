@@ -1,38 +1,47 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyLocate : MonoBehaviour
 {
     private bool _isSeePlayer = false;
-    [SerializeField] private Transform _player;
+    private Transform _player;
     [SerializeField] private float _speed = 2f;
     [SerializeField] private Color color = Color.green;
-    [SerializeField] private LayerMask mask;
-    [SerializeField] private float maxDistance = 15f;
-    private NavMeshAgent navMeshAgent;
+    private NavMeshAgent _navMeshAgent;
+    private Transform _parent;
+    private Vector3 _lastSeenPlayerPosition;
+
+    private float duration = 2f;
 
     private void Awake()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        _parent = transform.parent;
+        _navMeshAgent = transform.parent.GetComponent<NavMeshAgent>();
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
     }
+
     private void Update()
     {
         moveToPlayer();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            _isSeePlayer = true;
+            SetIsSeePlayer();
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("I don't see you");
-            _isSeePlayer = false;
-            color = Color.green;
+            SetIsSeePlayer();
+            StartCoroutine(CheckLastSeenPosition());
         }
 
     }
@@ -41,34 +50,45 @@ public class EnemyLocate : MonoBehaviour
     {
         if (_isSeePlayer)
         {
+            StopAllCoroutines();
             RaycastHit hit;
+            _navMeshAgent.Stop();
+            Vector3 direction = Vector3.ClampMagnitude(_player.position - _parent.position, 1);
 
-            navMeshAgent.Stop();
-
-            Vector3 dir = _player.position - transform.position;
-
-            Vector3 direction = Vector3.ClampMagnitude(_player.position - transform.position, 1);
-
-
-            var rayCast = Physics.Raycast(transform.position, dir, out hit, maxDistance, mask);
+            var rayCast = Physics.Raycast(_parent.position + _parent.up, direction, out hit);
             if (rayCast)
             {
                 if (hit.collider.transform == _player)
                 {
-                    print(hit.collider.name);
-                    transform.LookAt(_player);
-                    transform.Translate(direction * _speed * Time.deltaTime );
-                    //Vector3.MoveTowards(transform.position, _player.position, _speed);
-                    
-                    color = Color.red;
+                    _parent.LookAt(_player);
+                    if (!(Vector3.Distance(_parent.position, _player.position) < 1.5f))
+                    {
+                        _parent.position =
+                            Vector3.MoveTowards(_parent.position, _player.position, _speed * Time.deltaTime);
+                        _lastSeenPlayerPosition = _player.position;
+                    }
                 }
-                else { print(hit.collider.name); }
             }
-            Debug.DrawRay(transform.position, dir, color);
+
         }
-        else
+    }
+
+    public IEnumerator CheckLastSeenPosition()
+    {
+        float elapsedTime = 0f;
+        Vector3 startPosition = _parent.position;
+        while (elapsedTime < duration)
         {
-            navMeshAgent.Resume();
+            _parent.position = Vector3.Lerp(startPosition, _lastSeenPlayerPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
+        _navMeshAgent.Resume();
+    }
+
+    
+    public void SetIsSeePlayer()
+    {
+        _isSeePlayer = !_isSeePlayer;
     }
 }

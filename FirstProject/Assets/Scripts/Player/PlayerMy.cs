@@ -58,7 +58,6 @@ public class PlayerMy : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) Jump();
         if (Input.GetKeyDown(KeyCode.Y)) RestartBoxes();
         if (Input.GetKeyDown(KeyCode.G)) CreateMine();
-        if (Input.GetKeyDown(KeyCode.Z)) HandUp();
         Move();
         cameraMove();
     }
@@ -163,23 +162,5 @@ public class PlayerMy : MonoBehaviour
             boxesPositionSave.Add(box.position);
             boxesRotationSave.Add(box.rotation);
         }
-    }
-
-    public void HandUp()
-    {
-        if (_handFlag == false)
-        {
-            transform.Find("ShoulderRight").Rotate(-35, 0, 0);
-            transform.Find("HandBand").gameObject.SetActive(true);
-            _handFlag = true;
-            
-        }
-        else
-        {
-            transform.Find("ShoulderRight").Rotate(35, 0, 0);
-            transform.Find("HandBand").gameObject.SetActive(false);
-            _handFlag = false;
-        }
-
     }
 }
