@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,51 +7,21 @@ public class Door : MonoBehaviour
 {
     [SerializeField] float _rotation = -80f;
     public bool _isOpen = false;
-    
-    //[SerializeField] private float openHeight = 4.5f;
-    //[SerializeField] private float duration = 1;
-    //bool doorOpen;
-    //Vector3 closePosition;
-    //void Start()
-    //{
-    //    // Sets the first position of the door as it's closed position.
-    //    closePosition = transform.position;
-    //}
+    private Animator _animator;
 
-    //public void OperateDoor()
-    //{
-    //    StopAllCoroutines();
-    //    if (!doorOpen)
-    //    {
-    //        Vector3 openPosition = closePosition + Vector3.up * openHeight;
-    //        StartCoroutine(MoveDoor(openPosition));
-    //    }
-    //    else
-    //    {
-    //        StartCoroutine(MoveDoor(closePosition));
-    //    }
-    //    doorOpen = !doorOpen;
-    //}
-    //IEnumerator MoveDoor(Vector3 targetPosition)
-    //{
-    //    float timeElapsed = 0;
-    //    Vector3 startPosition = transform.position;
-    //    while (timeElapsed < duration)
-    //    {
-    //        transform.position = Vector3.Lerp(startPosition, targetPosition, timeElapsed / duration);
-    //        timeElapsed += Time.deltaTime;
-    //        yield return null;
-    //    }
-    //    transform.position = targetPosition;
-    //}
+    private void Awake()
+    {
+        _animator = gameObject.GetComponent<Animator>();
+    }
     public void OpenDoor()
     {
-        transform.Rotate(0, _rotation, 0);
+        _animator.SetBool("_isOpen",!_isOpen);
+        _animator.SetTrigger("Open");
         _isOpen = true;
     }
     public void CloseDoor()
     {
-        transform.Rotate(0, -_rotation, 0);
+        _animator.SetTrigger("Close");
         _isOpen = false;
     }
 }

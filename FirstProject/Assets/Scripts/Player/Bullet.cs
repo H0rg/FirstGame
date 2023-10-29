@@ -8,13 +8,13 @@ public class Bullet : MonoBehaviour
     private float damage = 5;
 
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Enemy"))
-    //    {
-    //        other.GetComponent<Enemy>().TakeDamage(damage);
-    //    }
-    //    Destroy(gameObject);
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<Enemy>().TakeDamage(damage);
+        }
+        Destroy(gameObject);
+    }
 
 }

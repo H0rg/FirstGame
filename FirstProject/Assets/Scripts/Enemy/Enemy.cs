@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour
         _currentHp = _maxHp;
         audioSource = GetComponent<AudioSource>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        Rigidbody rb = GetComponent<Rigidbody>();
+        
     }
     private void Start()
     {
@@ -47,6 +49,7 @@ public class Enemy : MonoBehaviour
         if (_currentHp <= 0 && _IsAlive == true)
         {
             _IsAlive = false;
+            
             StartCoroutine(DeadAnimation());
         }
 

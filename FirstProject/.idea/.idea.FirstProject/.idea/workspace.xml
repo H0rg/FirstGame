@@ -6,17 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="a2bf19fa-cbb0-48cf-b3b2-0123b428d8dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BigDoor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BigDoor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Door.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PickUpHealth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PickUpHealth.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PressurePlate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PressurePlate.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestMovement.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestMovement.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Doors/BigDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Doors/BigDoor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyLocate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyLocate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Doors/BigDoorButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Doors/BigDoorButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Doors/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Doors/Door.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Doors/DoorButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Doors/DoorButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUpItems/PickUpHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickUpItems/PickUpHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Bullet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PressurePlate/PressurePlate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PressurePlate/PressurePlate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestSceneScripts/CameraRig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TestSceneScripts/CameraRig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestSceneScripts/MouseMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TestSceneScripts/MouseMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Ciathyza/Gridbox Prototype Materials/Materials/Standard/Prototype_512x512_Grey1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Ciathyza/Gridbox Prototype Materials/Materials/Standard/Prototype_512x512_Grey1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdparty/Ciathyza/Gridbox Prototype Materials/Materials/Standard/Prototype_512x512_Grey3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdparty/Ciathyza/Gridbox Prototype Materials/Materials/Standard/Prototype_512x512_Grey3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PressurePlate/SecretDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PressurePlate/SecretDoor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +124,9 @@
       <workItem from="1698397414230" duration="1426000" />
       <workItem from="1698414615174" duration="2352000" />
       <workItem from="1698417250215" duration="13020000" />
-      <workItem from="1698471035979" duration="17603000" />
+      <workItem from="1698471035979" duration="24704000" />
+      <workItem from="1698563431146" duration="48000" />
+      <workItem from="1698563506200" duration="4524000" />
     </task>
     <servers />
   </component>

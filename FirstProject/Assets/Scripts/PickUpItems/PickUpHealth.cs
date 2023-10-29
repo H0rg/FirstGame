@@ -8,7 +8,7 @@ public class PickUpHealth : MonoBehaviour
     private void Update()
     {
 
-        transform.Rotate(Vector3.up * _speedRotation * Time.deltaTime);
+       // transform.Rotate(Vector3.up * _speedRotation * Time.deltaTime);
 
     }
     public void OnTriggerEnter(Collider other)

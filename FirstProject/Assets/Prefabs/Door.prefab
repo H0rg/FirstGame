@@ -26,13 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282050928116956505}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 1}
   m_LocalScale: {x: 0.02, y: 4, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3615099190140452987}
-  m_Father: {fileID: 4342638523710201771}
+  m_Children: []
+  m_Father: {fileID: 2700951574935206877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3450627940306790212
 MeshFilter:
@@ -96,6 +95,7 @@ GameObject:
   - component: {fileID: 5699905641716721883}
   - component: {fileID: 8630286449527107618}
   - component: {fileID: 5546858194723487719}
+  - component: {fileID: 7700130686379966299}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4545959732258815748}
+  - {fileID: 2700951574935206877}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5699905641716721883
@@ -152,8 +152,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1, y: 4.255239, z: 2}
-  m_Center: {x: 0, y: 0.8776195, z: 1}
+  m_Size: {x: 0.1, y: 4, z: 2}
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!208 &5546858194723487719
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -168,8 +168,29 @@ NavMeshObstacle:
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 1}
   m_TimeToStationary: 0.5
+--- !u!95 &7700130686379966299
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803529377284904864}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a6b277697309d74cbd50f87971c5746, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2080753988769388862
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,11 +218,11 @@ Transform:
   m_GameObject: {fileID: 2080753988769388862}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.1, y: 0.008529408, z: 0.398}
-  m_LocalScale: {x: 10, y: 0.058823533, z: 0.1}
+  m_LocalPosition: {x: 0.10200019, y: 0.0341177, z: 1.796}
+  m_LocalScale: {x: 0.19999999, y: 0.23529413, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4545959732258815748}
+  m_Father: {fileID: 2700951574935206877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5653210780293597145
 MeshFilter:
@@ -253,3 +274,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6160121668171516098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2700951574935206877}
+  m_Layer: 0
+  m_Name: MainPartOfDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2700951574935206877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6160121668171516098}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4545959732258815748}
+  - {fileID: 3615099190140452987}
+  m_Father: {fileID: 4342638523710201771}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -43,22 +44,37 @@ public class PlayerMy : MonoBehaviour
     private List<Vector3> boxesPositionSave = new List<Vector3>();
     private List<Quaternion> boxesRotationSave = new List<Quaternion>();
 
-    private bool _handFlag = false;
+    private Animator _animator;
 
-    private void Start()
+    private void Awake()
     {
+        _animator = GetComponent<Animator>();
         _currentHp = _maxHp;
-        BoxesSave();
         rigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+       
+    }
+    private void Start()
+    {
+        BoxesSave();
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F)) CreateBoom();
-        if (Input.GetButtonDown("Fire1") && _isReloaded == true) Fire();
-        if (Input.GetKeyDown(KeyCode.Space)) Jump();
-        if (Input.GetKeyDown(KeyCode.Y)) RestartBoxes();
-        if (Input.GetKeyDown(KeyCode.G)) CreateMine();
+        if (Input.GetKeyDown(KeyCode.F)) 
+            CreateBoom();
+        
+        if (Input.GetButtonDown("Fire1") && _isReloaded == true) 
+            Fire();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            Jump();
+        
+        if (Input.GetKeyDown(KeyCode.Y)) 
+            RestartBoxes();
+        
+        if (Input.GetKeyDown(KeyCode.G)) 
+            CreateMine();
+        
         Move();
         cameraMove();
     }
@@ -70,9 +86,9 @@ public class PlayerMy : MonoBehaviour
 
     private void Fire()
     {
-        //var bullet = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation).GetComponent<Rigidbody>();
-        //bullet.AddForce(Vector3.forward * force);
-        //bullet.AddTorque(Vector3.left * 80);
+        // var bullet = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation).GetComponent<Rigidbody>();
+        // bullet.AddForce(Vector3.forward * force);
+        // bullet.AddTorque(Vector3.left * force);
         RaycastHit hit;
         var rayCast = Physics.Raycast(_bulletStartPosition.position, transform.forward, out hit, 100);
         if (rayCast)
@@ -103,6 +119,10 @@ public class PlayerMy : MonoBehaviour
         _direction.x = Input.GetAxis("Horizontal");
         _direction.z = Input.GetAxis("Vertical");
         var speed = _direction * _speed * Time.deltaTime;
+        if (speed != Vector3.zero)
+            _animator.SetBool("Go", true);
+        else
+            _animator.SetBool("Go", false);
         transform.Translate(speed);
     }
     public void cameraMove()
@@ -115,6 +135,7 @@ public class PlayerMy : MonoBehaviour
         _currentHp -= damage;
         if (_currentHp <= 0)
         {
+            _animator.SetTrigger("Death" );
             Debug.Log("YOU ARE DEAD");
         }
     }
@@ -133,10 +154,15 @@ public class PlayerMy : MonoBehaviour
 
         var rayCast = Physics.Raycast(_isGroundedPosition.position, Vector3.down, out hit, 0.2f);
 
-        if (rayCast) _isGrounded = true;
+        if (rayCast)
+            _isGrounded = true;
         else _isGrounded = false;
         
-        if (_isGrounded == true) rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
+        if (_isGrounded)
+        {
+            rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
+        }
+
     }
 
     public void RestartBoxes()
