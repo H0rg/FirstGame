@@ -1,50 +1,61 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class PlayerMy : MonoBehaviour
 {
+    private Animator _animator;
     private Rigidbody rigidbody;
-
-    public float _speed = 5f;
-    public float _explosionTime = 5f;
+    [Header("Health Point")]
     private float _maxHp = 10;
     [SerializeField] public float _currentHp;
+    
+    [SerializeField] private float _boostDuration = 5;
+    [SerializeField] private float _boostPower = 8f;
 
-    public GameObject _bombPref;
-    public Transform _bombStartPosition;
+    [Header("Bomb")]
+    [SerializeField] private GameObject _bombPref;
+    [SerializeField] private Transform _bombStartPosition;
     private float _throwForce = 1.2f;
 
-    public GameObject _bulletPref;
-    public Transform _bulletStartPosition;
+    [Header("Bullet")]
+    [SerializeField] private GameObject _bulletPref;
+    [SerializeField] private Transform _bulletStartPosition;
     private float _bulletDamage = 5;
 
-    public GameObject _minePref;
-    public Transform _mineStartPosition;
+    [Header("Bullet")]
+    [SerializeField] private GameObject _minePref;
+    [SerializeField] private Transform _mineStartPosition;
 
-    public Transform _isGroundedPosition; 
-
-    public float force = 50;
-    private float _jumpForce = 450;
-
-    private Vector3 _direction;
-    private Vector3 _rotation;
-    [SerializeField] private float _mouseSpeed = 250f;
-
-    [SerializeField] public bool keyOne = false;
-    [SerializeField] public bool keyTwo = false;
-
-    public const float _maxReloadTime = 0.5f;
-
-    private bool _isReloaded = true;
+    [Header("Jump")]
+    [SerializeField] private Transform _isGroundedPosition;
+    [SerializeField] private float _jumpForce = 450;
     private bool _isGrounded = true;
 
+    [Header("Movement and Mouse Rotation")]
+    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _mouseSpeed = 250f;
+    private Vector3 _direction;
+    private Vector3 _rotation;
+
+    [Header("Keys")]
+    public bool keyOne = false;
+    public bool keyTwo = false;
+    
+    [Header("Reload")]
+    private const float _maxReloadTime = 0.5f;
+    private bool _isReloaded = true;
+
+    [Header("Boxes Saver")]
     [SerializeField] private GameObject boxes;
     private List<Vector3> boxesPositionSave = new List<Vector3>();
     private List<Quaternion> boxesRotationSave = new List<Quaternion>();
+    
+   
 
-    private Animator _animator;
 
     private void Awake()
     {
@@ -57,6 +68,7 @@ public class PlayerMy : MonoBehaviour
     private void Start()
     {
         BoxesSave();
+       
     }
     void Update()
     {
@@ -67,7 +79,11 @@ public class PlayerMy : MonoBehaviour
             Fire();
 
         if (Input.GetKeyDown(KeyCode.Space))
+        {
             Jump();
+            
+        }
+        
         
         if (Input.GetKeyDown(KeyCode.Y)) 
             RestartBoxes();
@@ -78,12 +94,33 @@ public class PlayerMy : MonoBehaviour
         Move();
         cameraMove();
     }
+
+    public void ColaMove()
+    {
+        StartCoroutine(CocaCola());
+    }
+    private IEnumerator CocaCola()
+    {
+        float elapsedTime = 0;
+        float _speedSave = _speed;
+        Debug.Log($"START BOOST !");
+        while (elapsedTime < _boostDuration)
+        {
+            Debug.Log($"BOOSTING");
+            _speed = _boostPower;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        _speed = _speedSave;
+        Debug.Log($"END BOOST ! Speed = {_speed}");
+    }
+    
+    
     
     private void Reload()
     {
         _isReloaded = true;
     }
-
     private void Fire()
     {
         // var bullet = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation).GetComponent<Rigidbody>();
@@ -99,8 +136,6 @@ public class PlayerMy : MonoBehaviour
                 hit.collider.gameObject.GetComponent<Enemy>().TakeDamage(_bulletDamage);
             }
         }
-
-
         _isReloaded = false;
         Invoke("Reload", _maxReloadTime);
     }
@@ -113,7 +148,6 @@ public class PlayerMy : MonoBehaviour
     {
         var bomb = Instantiate(_minePref, _mineStartPosition.position, Quaternion.identity);
     }
-
     public void Move()
     {
         _direction.x = Input.GetAxis("Horizontal");
@@ -130,6 +164,23 @@ public class PlayerMy : MonoBehaviour
         _rotation.y = Input.GetAxis("Mouse X");
         transform.Rotate(_rotation * _mouseSpeed);
     }
+    public void Jump()
+    {
+        Debug.Log("JUMP");
+        
+        RaycastHit hit;
+        var rayCast = Physics.Raycast(_isGroundedPosition.position, Vector3.down, out hit, 0.2f);
+
+        if (rayCast)
+            _isGrounded = true;
+        else _isGrounded = false;
+        
+        if (_isGrounded)
+        {
+            rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
+        }
+
+    }
     public void TakeDamage(float damage)
     {
         _currentHp -= damage;
@@ -145,24 +196,6 @@ public class PlayerMy : MonoBehaviour
             _currentHp = _maxHp;
         else
             _currentHp += heal;
-    }
-    public void Jump()
-    {
-        Debug.Log("JUMP");
-
-        RaycastHit hit;
-
-        var rayCast = Physics.Raycast(_isGroundedPosition.position, Vector3.down, out hit, 0.2f);
-
-        if (rayCast)
-            _isGrounded = true;
-        else _isGrounded = false;
-        
-        if (_isGrounded)
-        {
-            rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
-        }
-
     }
 
     public void RestartBoxes()

@@ -354,9 +354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  color: {r: 0, g: 1, b: 0, a: 1}
   _damage: 1
-  elapsedTime: 0
+  _animator: {fileID: 5501526691841329327}
 --- !u!1 &6725656787386983200
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +400,7 @@ GameObject:
   - component: {fileID: 7854823065950280738}
   - component: {fileID: -6968237055151313057}
   - component: {fileID: 7555741225301165289}
-  - component: {fileID: 7386621930792469311}
+  - component: {fileID: 5501526691841329327}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -487,10 +486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00003a7cd2d73184ca261c587d59149a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _graveStonePosition: {fileID: 2382398366787316184}
-  _prepGraveStone: {fileID: 200456178348087957, guid: f1092951de4a2c4448e8c8337af54e7c, type: 3}
-  _enemyRender: {fileID: 1362243304483428267}
-  _deathColor: {r: 1, g: 0.023584902, b: 0.023584902, a: 0}
   wayPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -517,7 +512,7 @@ CapsuleCollider:
   m_Height: 2.1084175
   m_Direction: 1
   m_Center: {x: 0, y: 1.0540305, z: 0}
---- !u!95 &7386621930792469311
+--- !u!95 &5501526691841329327
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -527,7 +522,7 @@ Animator:
   m_GameObject: {fileID: 6949703363623479260}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c1b9e58b5f42f5545ac079684d468f43, type: 2}
+  m_Controller: {fileID: 9100000, guid: 825cf74620044084096a2aad989afa66, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -2,21 +2,15 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-
     private float _explosionTime = 3f;
     private float _explosionDamage = 10f;
     private float _explosionPower = 15f;
-
-
+    
     private void Start()
     {
         Invoke("Explosion", _explosionTime);
 
     }
-    private void Update()
-    {
-    }
-
     private void Explosion()
     {
         var collisions = Physics.OverlapSphere(transform.position, 5);
@@ -28,7 +22,6 @@ public class Bomb : MonoBehaviour
             }
             if (collision.gameObject.GetComponent<Rigidbody>() != null)
             {
-                Debug.Log("pshhhh");
                 var tf = collision.gameObject.GetComponent<Transform>();
                 var rb = collision.gameObject.GetComponent<Rigidbody>();
 

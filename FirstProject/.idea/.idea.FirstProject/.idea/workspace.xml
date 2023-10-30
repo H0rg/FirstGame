@@ -6,21 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="a2bf19fa-cbb0-48cf-b3b2-0123b428d8dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BigDoor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BigDoor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animator/Enemy/Death.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animator/Enemy/Death.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animator/Enemy/Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animator/Enemy/Enemy.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/test.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/test.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Door.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PickUpHealth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PickUpHealth.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PressurePlate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PressurePlate.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Doors/BigDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Doors/BigDoor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Doors/BigDoorButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Doors/BigDoorButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Doors/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Doors/Door.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Doors/DoorButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Doors/DoorButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUpItems/PickUpHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickUpItems/PickUpHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Bullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyLocate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyLocate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Bomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Bomb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CameraRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CameraRotate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PressurePlate/SecretDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PressurePlate/SecretDoor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +30,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KekScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUpItems/Cola.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/CameraRotate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PressurePlate/PressurePlate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PressurePlate/SecretDoor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -37,6 +39,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/TestSceneScripts/MouseMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TestSceneScripts/MovementTest/CubeMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TestSceneScripts/Rotate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -126,7 +129,7 @@
       <workItem from="1698417250215" duration="13020000" />
       <workItem from="1698471035979" duration="24704000" />
       <workItem from="1698563431146" duration="48000" />
-      <workItem from="1698563506200" duration="4524000" />
+      <workItem from="1698563506200" duration="15319000" />
     </task>
     <servers />
   </component>

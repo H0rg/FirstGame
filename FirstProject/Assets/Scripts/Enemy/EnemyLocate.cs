@@ -6,21 +6,30 @@ using UnityEngine.UIElements;
 
 public class EnemyLocate : MonoBehaviour
 {
-    private bool _isSeePlayer = false;
-    private Transform _player;
     [SerializeField] private float _speed = 2f;
-    [SerializeField] private Color color = Color.green;
-    private NavMeshAgent _navMeshAgent;
-    private Transform _parent;
-    private Vector3 _lastSeenPlayerPosition;
     [SerializeField] private float _damage = 1f;
+
+    [SerializeField] private Animator _animator;
+    
+    private Transform _player;
+    private Transform _parent;
+    
+    private NavMeshAgent _navMeshAgent;
+    //private Animator _animator;
+    
+    private Vector3 _lastSeenPlayerPosition;
+    
+    private bool _isSeePlayer = false;
     private bool _makeHit = false;
     private float _timeBetweenHits = 3f;
-    public float elapsedTime = 0;
     private float duration = 2f;
+    private float elapsedTime = 0;
+    
+    
 
     private void Awake()
     {
+       // _animator = _parent.GetComponent<Animator>();
         _parent = transform.parent;
         _navMeshAgent = transform.parent.GetComponent<NavMeshAgent>();
         _player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -37,6 +46,7 @@ public class EnemyLocate : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            _animator.SetBool("IsChasing", true);
             SetIsSeePlayer();
         }
     }
@@ -109,6 +119,7 @@ public class EnemyLocate : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        _animator.SetBool("IsChasing", false);
         _navMeshAgent.Resume();
     }
 

@@ -93,7 +93,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4342638523710201771}
   - component: {fileID: 5699905641716721883}
-  - component: {fileID: 8630286449527107618}
   - component: {fileID: 5546858194723487719}
   - component: {fileID: 7700130686379966299}
   m_Layer: 0
@@ -133,27 +132,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotation: -80
   _isOpen: 0
---- !u!65 &8630286449527107618
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803529377284904864}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.1, y: 4, z: 2}
-  m_Center: {x: 0, y: 0, z: 1}
 --- !u!208 &5546858194723487719
 NavMeshObstacle:
   m_ObjectHideFlags: 0
