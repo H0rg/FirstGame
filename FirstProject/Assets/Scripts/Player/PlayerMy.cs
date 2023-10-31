@@ -186,7 +186,6 @@ public class PlayerMy : MonoBehaviour
         _currentHp -= damage;
         if (_currentHp <= 0)
         {
-            _animator.SetTrigger("Death" );
             Debug.Log("YOU ARE DEAD");
         }
     }

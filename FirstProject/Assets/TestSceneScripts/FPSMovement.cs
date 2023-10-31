@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using TMPro;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class FPSMovement : MonoBehaviour
