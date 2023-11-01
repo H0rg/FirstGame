@@ -10,7 +10,7 @@ public class Cola : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("COCA COLA");
-            other.GetComponent<PlayerMy>().ColaMove();
+            other.GetComponent<PlayerMy>().ColaBoost();
             Destroy(gameObject);
         }
     }

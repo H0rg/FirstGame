@@ -10,7 +10,10 @@ public class CameraRotate : MonoBehaviour
 
     void Update()
     {
-        Rotating();
+        if (!PauseMenu.GameIsPaused)
+        {
+            Rotating();
+        }
     }
     void Rotating()
     {

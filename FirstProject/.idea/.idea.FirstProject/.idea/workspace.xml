@@ -6,101 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="a2bf19fa-cbb0-48cf-b3b2-0123b428d8dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animator/Enemy/EnemyChasing.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animator/Enemy/EnemyChasing.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animator/Enemy/EnemyIdle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animator/Enemy/EnemyIdle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animator/Player/Death.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animator/Player/Death.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animator/Player/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animator/Player/Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animator/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animator/Player/Player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/10Button_Midl_Yellow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/10Button_Midl_Yellow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/11Button_Midl_Blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/11Button_Midl_Blue.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/12Button_Long_Blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/12Button_Long_Blue.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/13Button_Long_Green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/13Button_Long_Green.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/14Button_Long_Red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/14Button_Long_Red.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/15Button_Long_Yellow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/15Button_Long_Yellow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/16bttn-little.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/16bttn-little.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/17bttn-little.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/17bttn-little.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/18bttn-little.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/18bttn-little.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/19bttn-midl.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/19bttn-midl.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/1button_green_middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/1button_green_middle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/20bttn-midl.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/20bttn-midl.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/21bttn-midl.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/21bttn-midl.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/22Button_Midl_Green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/22Button_Midl_Green.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/23Button_Midl_Red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/23Button_Midl_Red.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/24Button_Midl_Blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/24Button_Midl_Blue.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/25Button_Long_Green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/25Button_Long_Green.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/26Button_Long_Blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/26Button_Long_Blue.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/27Button_Long_Red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/27Button_Long_Red.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/28button_green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/28button_green.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/29button_blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/29button_blue.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/2button_blue_middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/2button_blue_middle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/30button_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/30button_red.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/3button_green_middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/3button_green_middle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/4button_green_middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/4button_green_middle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/5button_blue_middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/5button_blue_middle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/6button_green_middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/6button_green_middle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/7button_green_middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/7button_green_middle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/8Button_Midl_Red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/8Button_Midl_Red.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/9Button_Midl_Green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/PNG/9Button_Midl_Green.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/buttons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/buttons.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/buttons.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Buttons/buttons.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fix.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy/EnemyColor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy/EnemyColor.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/PickUpHealth/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/PickUpHealth/New Material.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Player.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Player.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/checkColorForAnimation.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/checkColorForAnimation.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FixingProblem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FixingProblem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/Menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/PauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/PauseMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUpItems/Cola.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickUpItems/Cola.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CameraRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CameraRotate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestSceneScripts/FPSMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TestSceneScripts/FPSMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,8 +24,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KekScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUpItems/Cola.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/CameraRotate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PressurePlate/PressurePlate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PressurePlate/SecretDoor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestPlayer/TestPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TestSceneScripts/CameraRig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TestSceneScripts/FPSMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TestSceneScripts/MouseMove.cs" root0="FORCE_HIGHLIGHTING" />
@@ -219,7 +134,10 @@
       <workItem from="1698563506200" duration="15319000" />
       <workItem from="1698650123724" duration="12472000" />
       <workItem from="1698689147393" duration="2930000" />
-      <workItem from="1698728775600" duration="1212000" />
+      <workItem from="1698728775600" duration="3377000" />
+      <workItem from="1698772873245" duration="5825000" />
+      <workItem from="1698816900993" duration="3991000" />
+      <workItem from="1698859221995" duration="2330000" />
     </task>
     <servers />
   </component>

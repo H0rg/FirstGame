@@ -4,6 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -20,12 +21,18 @@ public class Enemy : MonoBehaviour
     private Rigidbody rb;
     private Animator _animator;
     private Transform pointOfView;
+    private Slider _slider;
 
     void Awake()
     {
+        _slider = transform.Find("CanvasHP").GetComponent<Slider>();
+        
         pointOfView = transform.Find("PointOfView");
         _IsAlive = true;
+        _slider.maxValue = _maxHp; 
         _currentHp = _maxHp;
+        _slider.value = _currentHp;
+        
         navMeshAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
@@ -44,13 +51,14 @@ public class Enemy : MonoBehaviour
     
     public void TakeDamage(float damage)
     {
+        
         _currentHp -= damage;
         if (_currentHp <= 0 && _IsAlive == true)
         {
             _IsAlive = false;
-            
             StartCoroutine(DeadAnimation());
         }
+        _slider.value = _currentHp;
 
     }
     private IEnumerator DeadAnimation()
