@@ -64,15 +64,16 @@ public class PlayerMy : MonoBehaviour
     private List<Vector3> boxesPositionSave = new List<Vector3>();
     private List<Quaternion> boxesRotationSave = new List<Quaternion>();
 
-
-
+    [Header("Audio")] 
+    private AudioSource _audioSource;
 
     private void Awake()
     {
         slrHP = transform.Find("HUD").transform.Find("HealthBar").GetComponent<Slider>();
         slrReload = transform.Find("HUD").transform.Find("ReloadBar").GetComponent<Slider>();
-       
-        
+
+        _audioSource = GetComponent<AudioSource>();
+            
         _animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -174,6 +175,7 @@ public class PlayerMy : MonoBehaviour
         // var bullet = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation).GetComponent<Rigidbody>();
         // bullet.AddForce(Vector3.forward * force);
         // bullet.AddTorque(Vector3.left * force);
+        //_audioSource.Play();
         RaycastHit hit;
         var rayCast = Physics.Raycast(_bulletStartPosition.position, transform.forward, out hit, 100);
         if (rayCast)

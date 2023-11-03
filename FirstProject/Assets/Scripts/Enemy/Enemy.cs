@@ -22,9 +22,12 @@ public class Enemy : MonoBehaviour
     private Animator _animator;
     private Transform pointOfView;
     private Slider _slider;
+    private ParticleSystem _particleSystem;
 
     void Awake()
     {
+        _particleSystem = GetComponent<ParticleSystem>();
+        
         _slider = transform.Find("CanvasHP").GetComponent<Slider>();
         
         pointOfView = transform.Find("PointOfView");
@@ -51,7 +54,7 @@ public class Enemy : MonoBehaviour
     
     public void TakeDamage(float damage)
     {
-        
+        _particleSystem.Play();
         _currentHp -= damage;
         if (_currentHp <= 0 && _IsAlive == true)
         {

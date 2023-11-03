@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a2bf19fa-cbb0-48cf-b3b2-0123b428d8dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainMixers.mixer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainMixers.mixer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestMovement.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestMovement.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +26,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PressurePlate/PressurePlate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PressurePlate/SecretDoor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ReverbOff.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestPlayer/TestPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TestSceneScripts/CameraRig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TestSceneScripts/FPSMovement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -130,7 +138,9 @@
       <workItem from="1698772873245" duration="5825000" />
       <workItem from="1698816900993" duration="3991000" />
       <workItem from="1698859221995" duration="3530000" />
-      <workItem from="1698942311179" duration="924000" />
+      <workItem from="1698942311179" duration="3638000" />
+      <workItem from="1698988053221" duration="1188000" />
+      <workItem from="1699034323564" duration="605000" />
     </task>
     <servers />
   </component>
