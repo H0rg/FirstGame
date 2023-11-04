@@ -68,7 +68,8 @@ public class EnemyLocate : MonoBehaviour
         {
             StopAllCoroutines();
             RaycastHit hit;
-            _navMeshAgent.Stop();
+            if (_navMeshAgent != null) 
+                _navMeshAgent.Stop();
             Vector3 direction = Vector3.ClampMagnitude(_player.position - _parent.position, 1);
 
             var rayCast = Physics.Raycast(_parent.position + _parent.up, direction, out hit);

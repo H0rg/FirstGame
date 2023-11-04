@@ -31,7 +31,6 @@ public class Bomb : MonoBehaviour
             }
 
         }
-        Debug.Log("BOOM");
         Destroy(gameObject);
     }
 }

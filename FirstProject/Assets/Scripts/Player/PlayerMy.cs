@@ -11,6 +11,7 @@ public class PlayerMy : MonoBehaviour
 {
     private Slider slrHP;
     private Slider slrReload;
+    private GameObject hud;
     private TMP_Text textReload;
 
     private Animator _animator;
@@ -23,19 +24,19 @@ public class PlayerMy : MonoBehaviour
     [SerializeField] private float _boostDuration = 5;
     [SerializeField] private float _boostPower = 8f;
 
-    [Header("Bomb")] 
-    [SerializeField] private GameObject _bombPref;
-    [SerializeField] private Transform _bombStartPosition;
-    private float _throwForce = 1.2f;
+    // [Header("Bomb")] 
+    // [SerializeField] private GameObject _bombPref;
+    // [SerializeField] private Transform _bombStartPosition;
+    // private float _throwForce = 1.2f;
 
     [Header("Bullet")] 
     [SerializeField] private GameObject _bulletPref;
     [SerializeField] private Transform _bulletStartPosition;
     [SerializeField] private float _bulletDamage = 5;
 
-    [Header("Bullet")] 
-    [SerializeField] private GameObject _minePref;
-    [SerializeField] private Transform _mineStartPosition;
+    // [Header("Bullet")] 
+    // [SerializeField] private GameObject _minePref;
+    // [SerializeField] private Transform _mineStartPosition;
 
     [Header("Jump")] 
     [SerializeField] private Transform _isGroundedPosition;
@@ -58,19 +59,17 @@ public class PlayerMy : MonoBehaviour
     private const float _maxReloadTime = 3f;
     private bool _isReloaded = true;
 
-    [Header("Boxes Saver")] [SerializeField]
-    private GameObject boxes;
-
-    private List<Vector3> boxesPositionSave = new List<Vector3>();
-    private List<Quaternion> boxesRotationSave = new List<Quaternion>();
-
     [Header("Audio")] 
     private AudioSource _audioSource;
 
+    private Light _light;
+
     private void Awake()
     {
-        slrHP = transform.Find("HUD").transform.Find("HealthBar").GetComponent<Slider>();
-        slrReload = transform.Find("HUD").transform.Find("ReloadBar").GetComponent<Slider>();
+        hud = GameObject.FindGameObjectWithTag("HUD");
+        slrHP = hud.transform.Find("HealthBar").GetComponent<Slider>();
+        slrReload = hud.transform.Find("ReloadBar").GetComponent<Slider>();
+        textReload = hud.transform.Find("ReloadText").GetComponent<TMP_Text>();
 
         _audioSource = GetComponent<AudioSource>();
             
@@ -81,7 +80,6 @@ public class PlayerMy : MonoBehaviour
         slrReload.maxValue = _maxReloadTime;
         slrReload.value = 0;
 
-        textReload = transform.Find("HUD").Find("ReloadText").GetComponent<TMP_Text>();
         
         slrHP.maxValue = _maxHp;
         _currentHp = _maxHp;
@@ -90,20 +88,13 @@ public class PlayerMy : MonoBehaviour
         currentBulletsInMag = maxBulletsInMag;
         textReload.text = $"{currentBulletsInMag} / {maxBulletsInMag} ";
 
-    }
-
-    private void Start()
-    {
-        BoxesSave();
+        _light = GetComponentInChildren<Camera>().GetComponentInChildren<Light>();
 
     }
-
     void Update()
     {
         if (!PauseMenu.GameIsPaused)
         {
-            if (Input.GetKeyDown(KeyCode.F))
-                CreateBoom();
 
             if (Input.GetButtonDown("Fire1") && _isReloaded)
                 Fire();
@@ -118,14 +109,13 @@ public class PlayerMy : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.Space))
                 Jump();
-            
-            
 
-            if (Input.GetKeyDown(KeyCode.Y))
-                RestartBoxes();
-
-            if (Input.GetKeyDown(KeyCode.G))
-                CreateMine();
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                _light.enabled = OffOn(_light.enabled);
+                Debug.Log("TurnOffOn");
+            }
+            
 
             Move();
             cameraMove();
@@ -154,7 +144,11 @@ public class PlayerMy : MonoBehaviour
         Debug.Log($"END BOOST ! Speed = {_speed}");
     }
 
-
+    private bool OffOn(bool value)
+    {
+        Debug.Log("Clakcs");
+        return !value;
+    }
 
     private void Reload()
     {
@@ -175,6 +169,7 @@ public class PlayerMy : MonoBehaviour
         // var bullet = Instantiate(_bulletPref, _bulletStartPosition.position, transform.rotation).GetComponent<Rigidbody>();
         // bullet.AddForce(Vector3.forward * force);
         // bullet.AddTorque(Vector3.left * force);
+        
         //_audioSource.Play();
         RaycastHit hit;
         var rayCast = Physics.Raycast(_bulletStartPosition.position, transform.forward, out hit, 100);
@@ -192,27 +187,16 @@ public class PlayerMy : MonoBehaviour
         if (currentBulletsInMag == 0)
             Reload();
     }
-
-    private void CreateBoom()
-    {
-        var bomb = Instantiate(_bombPref, _bombStartPosition.position, Quaternion.identity).GetComponent<Rigidbody>();
-        bomb.AddForce(_bombStartPosition.forward * _throwForce, ForceMode.Impulse);
-    }
-
-    private void CreateMine()
-    {
-        var bomb = Instantiate(_minePref, _mineStartPosition.position, Quaternion.identity);
-    }
-
+    
     public void Move()
     {
         _direction.x = Input.GetAxis("Horizontal");
         _direction.z = Input.GetAxis("Vertical");
         var speed = _direction * _speed * Time.deltaTime;
-        if (speed != Vector3.zero)
-            _animator.SetBool("Go", true);
-        else
-            _animator.SetBool("Go", false);
+        // if (speed != Vector3.zero)
+        //     _animator.SetBool("Go", true);
+        // else
+        //     _animator.SetBool("Go", false);
         transform.Translate(speed);
     }
 
@@ -260,35 +244,4 @@ public class PlayerMy : MonoBehaviour
             _currentHp += heal;
         slrHP.value = _currentHp;
     }
-
-
-    public void RestartBoxes()
-    {
-        int index = 0;
-        int childNumber = boxes.transform.childCount;
-        for (int i = 0; i < childNumber; i++)
-        {
-            var box = boxes.transform.GetChild(i).gameObject.GetComponent<Transform>();
-            box.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            box.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            box.transform.position = boxesPositionSave[index];
-            box.rotation = boxesRotationSave[index];
-            index++;
-        }
-    }
-
-    public void BoxesSave()
-    {
-        int childNumber = boxes.transform.childCount;
-        for (int i = 0; i < childNumber; i++)
-        {
-            var box = boxes.transform.GetChild(i).gameObject.GetComponent<Transform>();
-            boxesPositionSave.Add(box.position);
-            boxesRotationSave.Add(box.rotation);
-        }
-    }
-
-
-
-
 }

@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class SecretDoor : MonoBehaviour
 {
-   
-   
     [SerializeField] private bool _isOpen = false;
      private float duration = 5f;
      private Vector3 closePosition;

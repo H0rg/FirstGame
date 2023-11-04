@@ -6,13 +6,73 @@
   <component name="ChangeListManager">
     <list default="true" id="a2bf19fa-cbb0-48cf-b3b2-0123b428d8dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainMixers.mixer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainMixers.mixer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Bar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Bar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Crosshair.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Crosshair.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Empty_Image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Empty_Image.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Heart.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/blood_red_bar_border.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/blood_red_bar_border.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/blood_red_bar_fill.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/blood_red_bar_fill.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/health 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/health 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/health.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/health.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/MAT_Fire_Add.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/MAT_Fire_Add.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/MAT_Fire_Main.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/MAT_Fire_Main.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/MAT_Glow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/MAT_Glow.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HUD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HUD.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestMovement.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestMovement.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyLocate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyLocate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/PauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/PauseMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Bomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Bomb.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PressurePlate/SecretDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PressurePlate/SecretDoor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/FireFire1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/FireFire1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/MainFire 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/MainFire 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/MainFire 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/MainFire 2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/MainFire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/MainFire.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/Materials/Fire.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/Materials/Fire.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/Materials/FireFire.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/Materials/FireFire.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/Materials/TXT_Fire.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/Materials/TXT_Fire.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/Materials/TXT_Fire_01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/Materials/TXT_Fire_01.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/Materials/test7.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/Materials/test7.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/TXT_Fire_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/TXT_Fire_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test5 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test5 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/test7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +86,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PressurePlate/PressurePlate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PressurePlate/SecretDoor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PressurePlate/StartDoorButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ReverbOff.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestPlayer/TestPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TestSceneScripts/CameraRig.cs" root0="FORCE_HIGHLIGHTING" />
@@ -141,6 +202,10 @@
       <workItem from="1698942311179" duration="3638000" />
       <workItem from="1698988053221" duration="1188000" />
       <workItem from="1699034323564" duration="605000" />
+      <workItem from="1699078687663" duration="875000" />
+      <workItem from="1699081674071" duration="234000" />
+      <workItem from="1699086553408" duration="593000" />
+      <workItem from="1699097162042" duration="5479000" />
     </task>
     <servers />
   </component>

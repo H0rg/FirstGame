@@ -46,8 +46,8 @@ public class PauseMenu : MonoBehaviour
         panelPause.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        //player.GetComponent<PlayerMy>().enabled = true;
-        //camera.GetComponent<CameraRotate>().enabled = true;
+        player.GetComponent<PlayerMy>().enabled = true;
+        camera.GetComponent<CameraRotate>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -56,8 +56,8 @@ public class PauseMenu : MonoBehaviour
         panelPause.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-        //player.GetComponent<PlayerMy>().enabled = false;
-        //camera.GetComponent<CameraRotate>().enabled = false;
+        player.GetComponent<PlayerMy>().enabled = false;
+        camera.GetComponent<CameraRotate>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
     }
 
