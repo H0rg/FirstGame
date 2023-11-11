@@ -6,6 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="a2bf19fa-cbb0-48cf-b3b2-0123b428d8dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FirstProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/BigDoor/BigDoorButton.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/BigDoor/BigDoorButton.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Door/Door.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Door/Door.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy/Black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy/Black.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy/EnemyColor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy/EnemyColor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy/RedEye.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy/RedEye.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Environment/Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Environment/Floor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Environment/Stairs.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Environment/Stairs.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Environment/Table.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Environment/Table.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Environment/Walls.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Environment/Walls.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Player.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Player.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstLevel 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstLevel 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestHealthBar.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestHealthBar.unity.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +152,7 @@
       <workItem from="1699081674071" duration="234000" />
       <workItem from="1699086553408" duration="593000" />
       <workItem from="1699097162042" duration="6787000" />
+      <workItem from="1699702434303" duration="1388000" />
     </task>
     <servers />
   </component>
